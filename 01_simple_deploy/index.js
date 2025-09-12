@@ -19,6 +19,17 @@ app.get('/login', (req, res) => {
   res.send(`<h1>login successfully</h1>`)
 })
 
-app.listen(process.env.PORT , () => {
+const github = {
+  "success": {
+    "message": "Welcome to JSON Viewer Pro",
+    "status_code": 200
+  }
+}
+
+app.get('/github', (req, res) => {
+  res.json(github)
+})
+
+app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${port}`)
 })
